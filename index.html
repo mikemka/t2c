@@ -14,9 +14,9 @@
     </style></head>
 <body class="bg-dark" id="body">
     <div class="container" id="inputs">
-        <button class="btn btn-outline-light w-100 mt-3" onclick="dot();" style="min-height: 25vh; font-size: 10em;">•</button>
-        <button class="btn btn-outline-light w-100 mt-3" onclick="dash();" style="min-height: 25vh; font-size: 10em;">-</button>
-        <button class="btn btn-outline-light w-100 mt-3" onclick="triple();" style="min-height: 25vh; font-size: 10em;">⋯</button>
+        <button class="btn btn-outline-light w-100 mt-3" onclick="dot();" style="min-height: 20vh; font-size: 7em;">•</button>
+        <button class="btn btn-outline-light w-100 mt-3" onclick="dash();" style="min-height: 20vh; font-size: 7em;">-</button>
+        <button class="btn btn-outline-light w-100 mt-3" onclick="triple();" style="min-height: 20vh; font-size: 7em;">⋯</button>
         <button class="btn btn-lg btn-primary w-100 mt-3" onclick="enter();">Готово</button>
     </div>
 
@@ -77,14 +77,18 @@
             console.log(string);
             let i = -1;
             let t = '';
-            let out = '';
+            let out = 'код;тепло;свет\n\n';
             for (let s of string) {
                 t += s;
                 i = (i + 1) % 4;
                 if (i == 3) {
                     for (const key in alphabet) {
                         if (alphabet[key] == t) {
-                            out += key;
+                            if (t == '*') {
+                                out += '\n\n';
+                            } else {
+                                out += key;
+                            }
                             break;
                         }
                     }
