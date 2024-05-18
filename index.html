@@ -77,15 +77,15 @@
             console.log(string);
             let i = -1;
             let t = '';
-            let out = 'код;тепло;свет\n\n';
+            let out = 'код ; тепло ; свет\n\n';
             for (let s of string) {
                 t += s;
                 i = (i + 1) % 4;
                 if (i == 3) {
                     for (const key in alphabet) {
                         if (alphabet[key] == t) {
-                            if (t == '*') {
-                                out += '\n\n';
+                            if (key == '*') {
+                                out += '\n';
                             } else {
                                 out += key;
                             }
